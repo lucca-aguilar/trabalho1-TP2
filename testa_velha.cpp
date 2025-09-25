@@ -93,3 +93,11 @@ TEST_CASE("Jogo empatado", "[empate]") {
                                  };
     REQUIRE( VerificaVelha(tabuleiro_empate) == 0 );
 }
+
+TEST_CASE("Jogo impossível: Dois vencedores (X e O)", "[impossivel]") {
+    int tabuleiro_dois_vencedores[3][3] = { { 1, 1, 1 },
+                                            { 0, 0, 0 },
+                                            { 2, 2, 2 }
+                                          };
+    REQUIRE( VerificaVelha(tabuleiro_dois_vencedores) == -2 );
+}
