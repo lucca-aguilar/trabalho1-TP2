@@ -15,5 +15,28 @@
 
 int VerificaVelha(int velha[3][3])
 {
+	int num_x = 0;
+	int num_o = 0;
+
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(velha[i][j] == 1)
+			{
+				num_x++;
+			}
+			else if(velha[i][j] == 2)
+			{
+				num_o++;
+			}
+		}
+	}
+
+	if(num_x > (num_o + 1))
+	{
+		return -2;
+	}
+
 	return -1;
 }
