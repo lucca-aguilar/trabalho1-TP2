@@ -71,3 +71,10 @@ TEST_CASE( "Vitória do O na primeira linha", "[vitoria_O]" ) {
                                 };
     REQUIRE( VerificaVelha(vitoria_o_linha_1) == 2 );
 }
+
+TEST_CASE("Vitória de X na diagonal principal", "[vitoria_x]") {
+    int vitoria_x_diagonal_principal[3][3] = { {1, 2, 0},
+                            {0, 1, 2},
+                            {0, 0, 1} };
+    REQUIRE(VerificaVelha(vitoria_x_diagonal_principal) == 1);
+}
