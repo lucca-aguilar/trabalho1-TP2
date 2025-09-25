@@ -20,8 +20,10 @@ int VerificaVelha(int velha[3][3])
 		return -2;
 	}
 
-	if ((velha[0][0] == 2 && velha[1][0] == 2 && velha[2][0] == 2) || (velha[0][1] == 2 && velha[1][1] == 2 && velha[2][1] == 2)) return 2;
-	if ((velha[0][0] == 1 && velha[1][0] == 1 && velha[2][0] == 1) || (velha[0][2] == 1 && velha[1][2] == 1 && velha[2][2] == 1)) return 1;
+	if(VerificaVitoria(velha) != 0)
+	{
+		return VerificaVitoria(velha);
+	}
 
 	return -1;
 }
@@ -52,4 +54,14 @@ int DiferencaNumJogadas(int velha[3][3])
 	}
 
 	return true;
+}
+
+int VerificaVitoria(int velha[3][3])
+{
+	for (int index_coluna = 0; index_coluna < 3; index_coluna++)
+	{
+		if ((velha[0][index_coluna] == velha[1][index_coluna]) && (velha[1][index_coluna] == velha[2][index_coluna]) && velha[0][index_coluna] != 0) return velha[0][index_coluna];
+	}
+
+	return 0;
 }
