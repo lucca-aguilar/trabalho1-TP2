@@ -19,6 +19,9 @@ int VerificaVelha(int velha[3][3])
 	{
 		return -2;
 	}
+
+	if (velha[1][0] == 2 && velha[2][0] == 2 && velha[2][0] == 2) return 2;
+
 	return -1;
 }
 
