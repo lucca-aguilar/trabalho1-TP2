@@ -55,3 +55,11 @@ TEST_CASE( "Vitória do O na segunda coluna", "[vitoria_O]" ) {
                                   };
     REQUIRE( VerificaVelha(vitoria_o_coluna_2) == 2 );
 }
+
+TEST_CASE( "Vitória do X na terceira coluna", "[vitoria_X]" ) { 
+    int vitoria_X_coluna_3[3][3]= { { 0, 2, 1 }, 
+                                    { 0, 2, 1 },
+                                    { 0, 0, 1 }
+                                  };
+    REQUIRE( VerificaVelha(vitoria_X_coluna_3) == 1 );
+}
