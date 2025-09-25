@@ -119,7 +119,7 @@ TEST_CASE("Jogo em andamento sem vencedor", "[indefinido]") {
 TEST_CASE("Vitoria de X em um tabuleiro quase cheio", "[vitoria_x]") {
     int tabuleiro[3][3] = { {1, 2, 1},
                             {2, 1, 2},
-                            {1, 0, 1} };
+                            {0, 0, 1} };
     REQUIRE(VerificaVelha(tabuleiro) == 1);
 }
 
