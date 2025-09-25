@@ -39,8 +39,16 @@ int VerificaVelha(int velha[3][3]) {
 
     int vencedor = VerificaVitoria(velha);
     if (vencedor != 0) {
-        return vencedor; 
-    }
+		if (vencedor == 1 && num_x == num_o) {
+			return -2; 
+		}
+
+		if (vencedor == 2 && num_x > num_o) {
+			return -2; 
+		}
+
+		return vencedor; 
+	}
 
     if (jogadas_totais == 9) {
         return 0; 
