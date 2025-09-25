@@ -68,5 +68,7 @@ int VerificaVitoria(int velha[3][3])
 		if ((velha[index_linha][0] == velha[index_linha][1]) && (velha[index_linha][1] == velha[index_linha][2]) && velha[index_linha][0] != 0) return velha[index_linha][0];
 	}
 
+	if ((velha[0][0] == velha[1][1]) && (velha[1][1] == velha[2][2]) && velha[0][0] != 0) return velha[0][0];
+
 	return 0;
 }
