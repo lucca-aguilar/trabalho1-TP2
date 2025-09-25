@@ -80,8 +80,8 @@ TEST_CASE("Vitória de X na diagonal principal", "[vitoria_x]") {
 }
 
 TEST_CASE("Vitória de O na diagonal secundária", "[vitoria_O]") {
-    int vitoria_o_diagonal_secundaria[3][3] = { {1, 2, 0},
-                            {0, 1, 2},
-                            {0, 0, 1} };
-    REQUIRE(VerificaVelha(vitoria_o_diagonal_secundaria) == 1);
+    int vitoria_o_diagonal_secundaria[3][3] = { {0, 1, 2},
+                            {0, 2, 1},
+                            {2, 0, 0} };
+    REQUIRE(VerificaVelha(vitoria_o_diagonal_secundaria) == 2);
 }
