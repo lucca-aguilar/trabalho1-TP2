@@ -2,7 +2,7 @@
  * \file  velha.cpp
  */
 
- 
+
 #include "velha.hpp"
 
 /** 
@@ -14,6 +14,15 @@
  */ 
 
 int VerificaVelha(int velha[3][3])
+{
+	if(!DiferencaNumJogadas(velha))
+	{
+		return -2;
+	}
+	return -1;
+}
+
+int DiferencaNumJogadas(int velha[3][3])
 {
 	int num_x = 0;
 	int num_o = 0;
@@ -35,8 +44,8 @@ int VerificaVelha(int velha[3][3])
 
 	if(num_x > (num_o + 1))
 	{
-		return -2;
+		return false;
 	}
 
-	return -1;
+	return true;
 }
