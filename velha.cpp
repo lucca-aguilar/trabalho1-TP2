@@ -51,27 +51,54 @@ int VerificaVelha(int velha[3][3]) {
 
 
 int VerificaVitoria(int velha[3][3]) {
+	bool vitoria_o = false;
+	bool vitoria_x = false;
+
 	// Checa vitoria em linhas e colunas
     for (int index_linha = 0; index_linha < 3; index_linha++) {
         if (velha[index_linha][0] == velha[index_linha][1] && velha[index_linha][1] == velha[index_linha][2] && velha[index_linha][0] != 0) {
-            return velha[index_linha][0];
-        }
+            if (velha[index_linha][0] == 1) {
+				vitoria_x = true;
+        	} else {
+				vitoria_o = true;
+			}
+		}
     }
 
     for (int index_coluna = 0; index_coluna < 3; index_coluna++) {
         if (velha[0][index_coluna] == velha[1][index_coluna] && velha[1][index_coluna] == velha[2][index_coluna] && velha[0][index_coluna] != 0) {
-            return velha[0][index_coluna];
-        }
+            if (velha[0][index_coluna] == 1) {
+				vitoria_x = true;
+        	} else {
+				vitoria_o = true;
+			}
+		}
     }
 
 	// Checa vitórias na diagonal principal e na diagonal secundária
     if (velha[0][0] == velha[1][1] && velha[1][1] == velha[2][2] && velha[0][0] != 0) {
-        return velha[0][0];
+        if (velha[0][0] == 1) {
+			vitoria_x = true;
+		} else {
+			vitoria_o = true;
+		}
     } 
 	
 	if (velha[0][2] == velha[1][1] && velha[1][1] == velha[2][0] && velha[0][2] != 0) {
-        return velha[0][2];
+        if (velha[0][2] == 1) {
+			vitoria_x = true;
+		} else {
+			vitoria_o = true;
+		}
     }
+
+	if (vitoria_x && vitoria_o) {
+		return -2;
+	} else if (vitoria_x) {
+		return 1;
+	} else if (vitoria_o) {
+		return 2;
+	}
 
     return 0; 
 }
