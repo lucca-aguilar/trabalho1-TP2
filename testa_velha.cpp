@@ -85,3 +85,11 @@ TEST_CASE("Vitória de O na diagonal secundária", "[vitoria_O]") {
                             {2, 0, 0} };
     REQUIRE(VerificaVelha(vitoria_o_diagonal_secundaria) == 2);
 }
+
+TEST_CASE("Jogo empatado", "[empate]") { 
+    int tabuleiro_empate[3][3] = { { 1, 2, 1 }, 
+                                   { 1, 2, 2 },
+                                   { 2, 1, 1 }
+                                 };
+    REQUIRE( VerificaVelha(tabuleiro_empate) == 0 );
+}
