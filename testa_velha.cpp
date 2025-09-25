@@ -136,3 +136,10 @@ TEST_CASE("Jogo impossivel: tabuleiro cheio de X", "[impossivel]") {
                             {1, 1, 1} };
     REQUIRE(VerificaVelha(tabuleiro) == -2);
 }
+
+TEST_CASE("Jogo impossivel: X vence mas O teria uma jogada a mais", "[impossivel]") {
+    int tabuleiro[3][3] = { {1, 1, 1},
+                            {2, 2, 0},
+                            {2, 0, 0} };
+    REQUIRE(VerificaVelha(tabuleiro) == -2);
+}
