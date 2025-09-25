@@ -23,3 +23,11 @@ TEST_CASE("Jogo impossível: 'X' tem duas jogadas a mais que 'O'", "[impossivel]
                                      };
     REQUIRE( VerificaVelha(tabuleiro_impossivel) == -2 );
 }
+
+TEST_CASE("Jogo impossível: 'O' tem duas jogadas a mais que 'X'", "[impossivel]") { 
+    int tabuleiro_impossivel[3][3] = { { 2, 1, 2 }, 
+                                       { 0, 0, 0 },
+                                       { 0, 2, 0 }
+                                     };
+    REQUIRE( VerificaVelha(tabuleiro_impossivel) == -2 );
+}
