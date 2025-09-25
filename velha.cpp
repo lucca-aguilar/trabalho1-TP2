@@ -42,7 +42,7 @@ int DiferencaNumJogadas(int velha[3][3])
 		}
 	}
 
-	if(num_x > (num_o + 1))
+	if(num_x > (num_o + 1) || num_o > (num_x + 1))
 	{
 		return false;
 	}
