@@ -9,10 +9,10 @@
 #include "catch_amalgamated.hpp"
 
 TEST_CASE( "Tabuleiro vazio - jogo indefinido", "[indefinido]" ) { 
-	int tabuleiro_vazio[3][3]= {   { 0, 0, 0 }, 
-	                      { 0, 0, 0 },
-						  { 0, 0, 0 }
-					  };
+	int tabuleiro_vazio[3][3]= { { 0, 0, 0 }, 
+	                             { 0, 0, 0 },
+						         { 0, 0, 0 }
+	};
     REQUIRE( VerificaVelha(tabuleiro_vazio) == -1 );
 } 
 
@@ -30,4 +30,12 @@ TEST_CASE("Jogo impossível: 'O' tem duas jogadas a mais que 'X'", "[impossivel]
                                        { 0, 2, 0 }
                                      };
     REQUIRE( VerificaVelha(tabuleiro_impossivel) == -2 );
+}
+
+TEST_CASE( "Vitória do O na primeira coluna", "[vitoria_O]" ) { 
+    int vitoria_o_coluna_1[3][3]= { { 2, 1, 1 }, 
+                                    { 2, 0, 0 },
+                                    { 2, 0, 0 }
+                                  };
+    REQUIRE( VerificaVelha(vitoria_o_coluna_1) == 2 );
 }
