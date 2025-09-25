@@ -122,3 +122,10 @@ TEST_CASE("Vitoria de X em um tabuleiro quase cheio", "[vitoria_x]") {
                             {1, 0, 1} };
     REQUIRE(VerificaVelha(tabuleiro) == 1);
 }
+
+TEST_CASE("Vitoria de O em um tabuleiro com 8 jogadas", "[vitoria_o]") {
+    int tabuleiro[3][3] = { {1, 1, 2},
+                            {0, 1, 2},
+                            {1, 2, 2} };
+    REQUIRE(VerificaVelha(tabuleiro) == 2);
+}
