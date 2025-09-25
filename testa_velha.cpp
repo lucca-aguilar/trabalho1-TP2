@@ -108,3 +108,10 @@ TEST_CASE("Jogo impossível: X vence, mas o número de peças é igual", "[impos
                             {0, 0, 2} }; 
     REQUIRE(VerificaVelha(tabuleiro) == -2);
 }
+
+TEST_CASE("Jogo em andamento sem vencedor", "[indefinido]") {
+    int tabuleiro[3][3] = { {1, 0, 2},
+                            {0, 1, 0},
+                            {2, 0, 0} };
+    REQUIRE(VerificaVelha(tabuleiro) == -1);
+}
