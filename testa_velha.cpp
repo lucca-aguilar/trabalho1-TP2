@@ -101,3 +101,10 @@ TEST_CASE("Jogo impossível: Dois vencedores (X e O)", "[impossivel]") {
                                           };
     REQUIRE( VerificaVelha(tabuleiro_dois_vencedores) == -2 );
 }
+
+TEST_CASE("Jogo impossível: X vence, mas o número de peças é igual", "[impossivel]") {
+    int tabuleiro[3][3] = { {1, 1, 1},
+                            {2, 2, 0},
+                            {0, 0, 2} }; 
+    REQUIRE(VerificaVelha(tabuleiro) == -2);
+}
